@@ -17,9 +17,17 @@ class PharmgkbDumper(biothings.hub.dataload.dumper.LastModifiedHTTPDumper):
     UNCOMPRESS = True
     SRC_URLS = [
         'https://s3.pgkb.org/data/annotations.zip',
+        'https://s3.pgkb.org/data/pathways-tsv.zip',
+        'https://s3.pgkb.org/data/occurrences.zip',
+        'https://s3.pgkb.org/data/relationships.zip',
         'https://s3.pgkb.org/data/drugLabels.zip',
+        'https://s3.pgkb.org/data/clinicalVariants.zip',
+        'https://s3.pgkb.org/data/automated_annotations.zip',
         'https://s3.pgkb.org/data/genes.zip',
-        'https://s3.pgkb.org/data/occurrences.zip'
+        'https://s3.pgkb.org/data/drugs.zip',
+        'https://s3.pgkb.org/data/chemicals.zip',
+        'https://s3.pgkb.org/data/variants.zip',
+        'https://s3.pgkb.org/data/phenotypes.zip'
     ]
     __metadata__ = {"src_meta": {}}
 
