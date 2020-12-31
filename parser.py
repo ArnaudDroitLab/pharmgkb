@@ -69,7 +69,7 @@ def load_genes(data_folder):
     dat = pandas.read_csv(infile,sep="\t",squeeze=True,quoting=csv.QUOTE_NONE).to_dict(orient='records')
     results = {}
     for rec in dat:
-        if rec["Object Type"] = "Gene":
+        if rec["Object Type"] == "Gene":
             continue
         _id = rec["Object ID"]
         rec = dict_convert(rec,keyfn=process_key)
