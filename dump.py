@@ -18,6 +18,7 @@ class PharmgkbDumper(biothings.hub.dataload.dumper.LastModifiedHTTPDumper):
     SRC_URLS = [
         'https://s3.pgkb.org/data/annotations.zip',
         'https://s3.pgkb.org/data/drugLabels.zip',
+        'https://s3.pgkb.org/data/genes.zip',
         'https://s3.pgkb.org/data/occurrences.zip'
     ]
     __metadata__ = {"src_meta": {}}
