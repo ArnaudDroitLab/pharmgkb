@@ -63,3 +63,18 @@ def load_occurrences(data_folder):
         doc = {"_id": _id, "occurrences" : docs}
         yield doc
 
+def load_genes(data_folder):
+    infile = os.path.join(data_folder,"genes.tsv")
+    assert os.path.exists(infile)
+    dat = pandas.read_csv(infile,sep="\t",squeeze=True,quoting=csv.QUOTE_NONE).to_dict(orient='records')
+    results = {}
+    for rec in dat:
+        if rec["Object Type"] = "Gene":
+            continue
+        _id = rec["Object ID"]
+        rec = dict_convert(rec,keyfn=process_key)
+        results.setdefault(_id,[]).append(rec)
+    for _id,docs in results.items():
+        doc = {"_id": _id, "genes" : docs}
+        yield doc
+
