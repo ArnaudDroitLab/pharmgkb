@@ -8,7 +8,7 @@ import biothings.hub.dataload.uploader
 from .parser import load_genes
 
 
-class OccurrencesUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
+class GenesUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
 
     main_source = "pharmgkb"
     name = "genes"
