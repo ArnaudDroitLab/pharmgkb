@@ -18,7 +18,7 @@ class GenesUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
 
     def load_data(self, data_folder):
         self.logger.info("Load data from directory: '%s'" % data_folder)
-        return load_occurrences(data_folder)
+        return load_genes(data_folder)
 
     @classmethod
     def get_mapping(klass):
