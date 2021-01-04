@@ -9,6 +9,7 @@ logging = config.logger
 # we'll remove space in keys to make queries easier. Also, lowercase is preferred
 # for a BioThings API. We'll an helper function from BioThings SDK
 process_key = lambda k: k.replace(" ","_").lower()
+process_key2 = lambda k: k.replace(" ","_").replace(".","_").lower()
 
 
 def load_annotations(data_folder):
