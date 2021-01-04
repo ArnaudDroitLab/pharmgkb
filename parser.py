@@ -69,12 +69,22 @@ def load_genes(data_folder):
     dat = pandas.read_csv(infile,sep="\t",squeeze=True,quoting=csv.QUOTE_NONE).to_dict(orient='records')
     results = {}
     for rec in dat:
-        if rec["Object Type"] != "Gene2": 
-            continue
-        _id = rec["Object ID"]
-        rec = dict_convert(rec,keyfn=process_key)
+        _id = rec["PharmGKB Accession Id"]
+        rec = dict_convert(rec,keyfn=process_key2)
         results.setdefault(_id,[]).append(rec)
     for _id,docs in results.items():
         doc = {"_id": _id, "genes" : docs}
         yield doc
 
+def load_drugs(data_folder):
+    infile = os.path.join(data_folder,"drugs.tsv")
+    assert os.path.exists(infile)
+    dat = pandas.read_csv(infile,sep="\t",squeeze=True,quoting=csv.QUOTE_NONE).to_dict(orient='records')
+    results = {}
+    for rec in dat:
+        _id = rec["PharmGKB Accession Id"]
+        rec = dict_convert(rec,keyfn=process_key2)
+        results.setdefault(_id,[]).append(rec)
+    for _id,docs in results.items():
+        doc = {"_id": _id, "drugs" : docs}
+        yield doc
