@@ -17,7 +17,6 @@ class PharmgkbDumper(biothings.hub.dataload.dumper.LastModifiedHTTPDumper):
     UNCOMPRESS = True
     SRC_URLS = [
         'https://s3.pgkb.org/data/annotations.zip',
-        'https://s3.pgkb.org/data/pathways-tsv.zip',
         'https://s3.pgkb.org/data/occurrences.zip',
         'https://s3.pgkb.org/data/relationships.zip',
         'https://s3.pgkb.org/data/drugLabels.zip',
